@@ -1,0 +1,131 @@
+.catalog {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+.card, .card_noshadow {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: transparent;
+}
+.card {
+    background: var(--color-white);
+    box-shadow: 2px 4px 20px 0px rgba(0, 0, 0, 0.10);
+}
+.card_img_box {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.card_img_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.card_info, .card_info_10 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 20px 24px;
+    height: calc(100% - 200px);
+}
+.card_info_10 {
+    padding: 10px 0px 0px 0px;
+}
+.card_title {
+    color: var(--color-black);
+    font-family: Oswald;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.card_description {
+    color: var(--color-gray);
+    font-family: Inter;
+    font-size: 16px;
+    line-height: 150%;
+    white-space: pre-wrap;
+}
+.card_line {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card_price {
+    color: var(--color-red);
+    font-family: Oswald;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 150%;
+}
+.card_line_label {
+    color: var(--color-gray);
+    font-family: Inter;
+    font-size: 16px;
+    line-height: 150%;
+}
+.card_line_value {
+    color: var(--color-black);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+}
+.card_a {
+    text-decoration: none;
+    color: var(--color-green);
+}
+.card_button {
+    position: relative;
+    background: transparent;
+    border: none;
+    color: var(--color-green);
+    font-family: Oswald;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+.card_button::after {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    display: block;
+    content: "";
+    width: 0px;
+    height: 3px;
+    border-radius: 10px;
+    background: var(--color-green);
+    transition: width .3s;
+}
+.card_button:hover::after {
+    width: 100%;
+}
+
+@media (max-width:1281px) {
+    .card_price {
+        font-size: 18px;
+    }
+    .card_button {
+        font-size: 16px;
+    }
+}
+@media (max-width:1025px) {
+    .catalog {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width:600px) {
+    .catalog {
+        grid-template-columns: 1fr;
+    }
+}

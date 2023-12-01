@@ -1,0 +1,122 @@
+.columns_container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: calc(50% - 15px) calc(50% - 15px);
+    column-gap: 30px;
+}
+.house_images_slider_box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.house_images_slider {
+    width: 100%;
+}
+.house_slider_img_box {
+    width: 100%;
+    height: 400px;
+    padding: 5px;
+}
+.house_slider_img_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+}
+.images_slider_arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Oswald;
+    font-size: 22px;
+    color: var(--color-black);
+    font-weight: 700;
+    background: var(--color-white);
+    border-radius: 50%;
+    z-index: 998;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+.images_slider_arrow:active {
+    background: var(--color-gray);
+}
+#prevArrow {
+    left: 10px;
+}
+#nextArrow {
+    right: 10px;
+}
+.house_info {
+    font-family: Inter;
+    color: var(--color-black);
+    font-family: Inter;
+    font-size: 18px;
+    line-height: 150%;
+}
+.house_title {
+    font-family: Oswald;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.house_description {
+    white-space: pre-wrap;
+}
+p {
+    margin-bottom: 25px;
+}
+.btn_order {
+    position: relative;
+    background: transparent;
+    border: none;
+    color: var(--color-green);
+    font-family: Oswald;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn_order::after {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    display: block;
+    content: "";
+    width: 0px;
+    height: 3px;
+    border-radius: 10px;
+    background: var(--color-green);
+    transition: width .3s;
+}
+.btn_order:hover::after {
+    width: 100%;
+}
+
+@media (max-width:1025px) {
+    .columns_container {
+        grid-template-columns: 100%;
+        row-gap: 30px;
+    }
+}
+@media (max-width:801px) {
+    .house_slider_img_box {
+        height: 350px;
+    }
+}
+@media (max-width:600px) {
+    .house_slider_img_box {
+        height: 300px;
+    }
+}

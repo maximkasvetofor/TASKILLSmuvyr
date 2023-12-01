@@ -1,0 +1,122 @@
+.products_images {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    grid-template-rows: 270px 270px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "a a b" "c d b";
+}
+.product_image_box {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.product_image_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.product_image_box:nth-child(1) {
+    grid-area: a;
+}
+.product_image_box:nth-child(2) {
+    grid-area: b;
+}
+.product_image_box:nth-child(3) {
+    grid-area: c;
+}
+.product_image_box:nth-child(4) {
+    grid-area: d;
+}
+.history_container {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+}
+.history_image_box {
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.history_image_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.history_text {
+    margin: 20px 0px 30px;
+    color: var(--color-gray);
+    font-family: Inter;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.cafe_catalog {
+    grid-template-columns: 1fr;
+}
+.cafe_card {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 30px;
+}
+.cafe_card_img_box {
+    height: 350px;
+    padding: 5px;
+    margin: auto;
+}
+.cafe_card_img_box img {
+    border-radius: 8px;
+}
+
+@media (max-width:1281px) {
+    .cafe_card {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width:1025px) {
+    .catalog {
+        grid-template-columns: 1fr 1fr;
+    }
+    .card_noshadow:nth-child(3n) {
+        display: none;
+    }
+    .card:nth-child(3n) {
+        display: none;
+    }
+}
+@media (max-width:801px) {
+    .cafe_card {
+        grid-template-columns: 1fr 1.5fr;
+    }
+    .cafe_card_img_box {
+        max-height: 400px;
+    }
+    .history_container {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+    .history_image_box {
+        height: 300px;
+    }
+}
+@media (max-width:600px) {
+    .cafe_card {
+        grid-template-columns: 1fr;
+    }
+    .cafe_card_img_box {
+        max-height: 300px;
+    }
+    .products_images {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "a b" "c d";
+    }
+}
+@media (max-width:480px) {
+    .products_images {
+        grid-template-rows: 200px 200px;
+    }
+}
